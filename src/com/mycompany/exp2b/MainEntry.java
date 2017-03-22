@@ -12,6 +12,7 @@ import java.util.Arrays;
  */
 public class MainEntry {
 
+	// NOTE ilker example "static inner class" below
 	public static class SomeClass {
 		private String name;
 		public SomeClass(String _name) {
@@ -77,6 +78,18 @@ public class MainEntry {
 		System.out.println("BEFORE names" + Arrays.toString(names));	// prints; [ilkerMR, johnMR]
 		strArrayPassedByReference_WRONG(names);
 		System.out.println("AFTER names" + Arrays.toString(names));		// prints; [ilkerMR, johnMR]
+		
+		int[] intArray5 = {100,200,300};
+		// multi dimensional arrays
+		int twoDimensionalIntArray[][] = new int[2][3];
+		twoDimensionalIntArray[0] = new int[3];
+			twoDimensionalIntArray[0][0] = 10;
+			twoDimensionalIntArray[0][1] = 20;
+			twoDimensionalIntArray[0][2] = 30;
+			
+		twoDimensionalIntArray[1] = intArray5;
+		
+		
 	}
 	
 	private static void strArrayPassedByReference(String[] _names) {
