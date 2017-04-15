@@ -7,9 +7,9 @@ Example Java project created via STS as Java Project, showing how to;
 - short cut to declare & construct(allocate memory) & initialize elements of an array in 1 line (MainEntry)
 - have array of primitives or Classes (i.e objects) (MainEntry)
 - passed array reference (MainEntry.strArrayPassedByReference)
-- multi dimensional arrays
-- foreach loop on arrays
-- "variable inputs" to methods gets passed in as array
+- multi dimensional arrays ((MainEntry.main)
+- foreach loop on arrays ((MainEntry.main)
+- "variable inputs" to methods gets passed in as array (MainEntry.average)
 
 ## Setup dependencies
 Make sure on your machine, you have;
