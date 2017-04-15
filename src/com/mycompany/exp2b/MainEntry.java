@@ -70,26 +70,37 @@ public class MainEntry {
 		
 		// passing array as reference and changing values of its elements in a method
 		String[] names = {"ilker", "john"};
-		System.out.println("BEFORE names" + Arrays.toString(names));	// prints; [ilker, john]
+		System.out.println("BEFORE names:" + Arrays.toString(names));	// prints; [ilker, john]
 		strArrayPassedByReference(names);
-		System.out.println("AFTER names" + Arrays.toString(names));		// prints; [ilkerMR, johnMR]
+		System.out.println("AFTER names:" + Arrays.toString(names));		// prints; [ilkerMR, johnMR]
 		
 		// NOTE ilker if method recreates the array, then it will not work on passed reference array
-		System.out.println("BEFORE names" + Arrays.toString(names));	// prints; [ilkerMR, johnMR]
+		System.out.println("BEFORE names:" + Arrays.toString(names));	// prints; [ilkerMR, johnMR]
 		strArrayPassedByReference_WRONG(names);
-		System.out.println("AFTER names" + Arrays.toString(names));		// prints; [ilkerMR, johnMR]
+		System.out.println("AFTER names still same as before:" + Arrays.toString(names));		// prints; [ilkerMR, johnMR]
 		
-		int[] intArray5 = {100,200,300};
 		// multi dimensional arrays
+		// declare and create(alloc memory) for 2D array
 		int twoDimensionalIntArray[][] = new int[2][3];
 		twoDimensionalIntArray[0] = new int[3];
-			twoDimensionalIntArray[0][0] = 10;
-			twoDimensionalIntArray[0][1] = 20;
-			twoDimensionalIntArray[0][2] = 30;
-			
+		// set values of elements of 0th array element of 2D array
+		twoDimensionalIntArray[0][0] = 10;
+		twoDimensionalIntArray[0][1] = 20;
+		twoDimensionalIntArray[0][2] = 30;
+		// set value of 1st array element of 2D array
+		int[] intArray5 = {100,200,300};
 		twoDimensionalIntArray[1] = intArray5;
+		System.out.println("twoDimensionalIntArray is " + Arrays.deepToString(twoDimensionalIntArray));	// NOTE using "Arrays.deepToString" for multi dimensional array. Prints [[10, 20, 30], [100, 200, 300]]
+
+		// NOTE ilker foreach loop below
+		String[] spanishNumbers = {"uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez"};
+		for (String spanishNumber : spanishNumbers) {
+			System.out.println("spanishNumber:" + spanishNumber);
+		}
 		
-		
+		// NOTE ilker below using "variable number of inputs"
+		double averageOfNumbers = average(1, 2, 3, 4, 5);
+		System.out.println("averageOfNumbers:" + averageOfNumbers);
 	}
 	
 	private static void strArrayPassedByReference(String[] _names) {
@@ -105,5 +116,20 @@ public class MainEntry {
 		}
 	}
 	
+	/**
+	 * NOTE ilker ... represent "variable" number of inputs. 
+	 * Behind the scenes, variable number of inputs effectively gets passed in as an array
+	 * @param numbers variable number of numbers, effectively double[]
+	 * @return average of numbers
+	 */
+	public static double average(double ... numbers) {
+		double total = 0d;
+		
+		for (double number : numbers) {
+			total += number;
+		}
+		
+		return total / numbers.length;
+	}
 	
 }
