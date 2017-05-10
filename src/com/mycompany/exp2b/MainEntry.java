@@ -68,6 +68,9 @@ public class MainEntry {
 		System.out.println("floatArray print via Arrays.toString:" + Arrays.toString(floatArray));	// prints; [301.0, 302.0, 303.0, 304.0, 305.0]
 		System.out.println("someClassArray via Arrays.toString:" + Arrays.toString(someClassArray));	// prints; [name:one, name:two]
 		
+		// accessing an element of array at an index
+		System.out.println("3rd element of floatArray at index 2 is:" + floatArray[2]);		// prints 303.0
+		
 		// passing array as reference and changing values of its elements in a method
 		String[] names = {"ilker", "john"};
 		System.out.println("BEFORE names:" + Arrays.toString(names));	// prints; [ilker, john]
